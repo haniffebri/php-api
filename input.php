@@ -2,10 +2,10 @@
 <html>
 <head>
 	<title>Membuat Dengan PHP dan PHPMyAdmin - Menampilkan data dari database</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" tyspe="text/css" href="style.css">
 </head>
 <body>
-	<div class="judul">
+	<div class="judul">s
 		<h1>Membuat Dengan PHP Dan MySQL</h1>
 		<h2>Menampilkan data</h2>
 

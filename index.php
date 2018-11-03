@@ -1,19 +1,21 @@
 <html>
 <head>
   <title>Menampilkan data dari database ke dalam bentuk tabel</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
   <div class="container">
-  	<h2><center>DATA PESERTA</center></h2>
+    <h2><center>DATA PESERTA</center></h2>
 
-  	<table class=" table table-bordered table-hovered" align="center">
+    <table class=" table table-bordered table-hovered" align="center">
   <tr>
-  	<th>id</th>
-  	<th>username</th>
-  	<th>password</th>
-  	<th>level</th>
-  	<th>fullname</th>
+    <th>id</th>
+    <th>username</th>
+    <th>password</th>
+    <th>level</th>
+    <th>fullname</th>
+    <th>pilihan</th>
   </tr></div>
   <?php
   //  1. Lakukan include koneksi.php untuk membuat koneksi
@@ -24,15 +26,15 @@
   $peserta=mysqli_query($conn,$sql_tampil);
   // 4. Lakukan fetch dengan result type MYSQL_ASSOC
   while($baris_data=mysqli_fetch_array($peserta,MYSQLI_ASSOC)){
-  	echo'
-  	</tr>
-  		<td>'.$baris_data['ID'].'</td>
-  		<td>'.$baris_data['Username'].'</td>
-  		<td>'.$baris_data['Password'].'</td>
-  		<td>'.$baris_data['Level'].'</td>
-  		<td>'.$baris_data['Fullname'].'</td>
-  	</tr>';
-  }
-  ?>
+    ?>
+    <tr>
+      <td><?php echo $baris_data['ID'];?></td>
+      <td><?php echo $baris_data['Username'];?></td>
+      <td><?php echo $baris_data['Password'];?></td>
+      <td><?php echo $baris_data['Level'];?></td>
+      <td><?php echo $baris_data['Fullname'];?></td>
+      <td><a class="edit" href="edit.php id=<?php echo $baris_data['id']; ?>">Edit</a>-<a class="hapus" href="hapus.php id=<?php echo $baris_data['id']; ?>">Hapus</a></td>
+    </tr>
+  <?php }?>
 </body>
 </html>
